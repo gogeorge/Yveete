@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+	<head>		
+		<title>Yveete | Home</title>
+		<link rel="icon" href= "icons/rel-icon-yveete.png">
+		<link rel="stylesheet" href="main.css">
+		<script>
+		//This reloads the dictionary.js file
+		var enableDict = localStorage.getItem('enableDict');
+		if (enableDict == "true") {
+			setInterval(function() {
+				var head= document.getElementsByTagName('head')[0];
+			    var script= document.createElement('script');
+		   	    script.type= 'text/javascript';
+			    script.onreadystatechange= function () {loadDict();}
+		 	    script.onload= function () {loadDict();}
+			    script.src= 'dictionary.js';
+			    head.appendChild(script);
+			}, 1000);
+		}
+		</script>
+	</head>
+	<body id="body">
+		<div class="allHeader">
+			<img id="logo" src="icons/yveete-logo-resized.png">
+	      	<div allign="left" id="mainHeader">
+				<p class="textTitle"><br/>Yveete <span>V2</span></p>
+			</div>
+		</div>
+		<div id="blur"></div>
+		<div id="greySpace"></div>
+		<center>
+			<!-- Hidden Components -->
+			<canvas id="mycanvas" height="400" width="550"></canvas>
+			<div id="whiteCanvas"></div>
+			<button id="canvasBtn" onclick="exit();">Close</button>
+			<input type="text" id="titleInput" placeholder="Type a title"/><br>
+			<center><textarea rows="5" cols="75" id="prompt1" placeholder="Type here"></textarea></center>
+			<center><textarea rows="5" cols="75" id="prompt2" placeholder="Type code here"></textarea></center>
+			<textarea rows="5" cols="75" id="prompt3" value="" placeholder="smartcode"></textarea>
+			<center><input id="btnPrompt" type="button" onclick="submit();" value="Submit"></center>
+			<div id="weather" hidden></div>
+			<div id='results' hidden></div>
+			<p hidden>Current Temp: <span id="temp"></span></p>
+			<div id="news_div" hidden></div>
+			<div id="dict_div" hidden></div>
+			<!-- Visible Components -->
+			<br>
+			<div id="dialog"></div>
+			<input type="text" id="inputText" value='Talk to Yveete' autocapitalize="none"/>
+		</center>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.1.1/Chart.min.js"></script>
+			<script src="scripts/main-script/mainYveete.js"></script> 
+			<script src="scripts/additional-scripts/break_even_chart.js"></script>
+			<script src="scripts/ajax-scripts/weather.js"></script>	
+			<script src="scripts/ajax-scripts/news.js"></script>
+			<script src="scripts/ajax-scripts/dictionary.js"></script>
+			<script src="scripts/ajax-scripts/xkcd_jokes.js"></script>
+	</body>
+</html>
