@@ -9,4 +9,5 @@ You can visit the official website here: <a href="http://yveete.kissr.com" targe
 Yveete can send emails, save notes, set reminders and provide you with news. You can also teach Yveete to make conversation more interesting/larger.
 
 Here is the link that shows what you can do: http://yveete.kissr.com/help/commands.html
+
 Here is how to teach Yveete: http://yveete.kissr.com/help/commands/learning-yveete.html
