@@ -1,3 +1,4 @@
+
 			body { 
 				background-color: #DCDCDC;
 				position:fixed;
@@ -10,13 +11,14 @@
 				width: 80px;
 				height: 80px;
 				z-index: 9;
-				margin-bottom: -105px;
+				margin-bottom: -64px;
 				position: relative;
 				right:0;
 			}
-			.allHeader { 
+			#allHeader { 
+				visibility: visible;
 				position: relative;
-				top: -40px;
+				top: 0px;
 				opacity: 1;
 				-webkit-animation: allHeader 2s;
 				animation: allHeader 2s;
@@ -29,6 +31,7 @@
 				0% {opacity: 0;}
 				100% {opacity: 1;}
 			}
+			#all { position: relative;}
 			.textTitle {
 				color: 	#90EE90; 
 				font-family: Helvetica;
@@ -36,53 +39,18 @@
 				margin-left: 95px;
 				position: relative;
 				top: -40px;
-				right: 0px;
+				left: 20px;
 				
 			}
 			#mainHeader {
-				width: 105%;
+				width: 103%;
 				height: 93px;
 				background-color: white;
-				margin-top: -40px;
-				margin-left: -10px;
-			}
-			ul {
-			    list-style-type: none;
-			    position: absolute;
-				right: 0%;
-				top: 35px;
-			    overflow-x: hidden;
-			    z-index: 1;
-			}
-
-			li {
-			    float: left;
-			    font-family: Helvetica;
-			    font-weight: lighter;
-			    font-size: 16px;
-			    z-index: 16;
-			}
-
-			li a {
-				z-index: 20;
-				margin-top: 10px;
-				margin-bottom: 30px;
-				margin-right: 13px;
-			    display: block;
-			    color: black;
-			    text-align: center;
-			    padding: 10px 18px;
-			    text-decoration: none;
-			}
-			li a:hover {
-				box-shadow: 3.5px 3.5px 14px rgba(0, 0, 0, 0.4);
-			}
-			a:hover:not(.active) {
-			    background-color: white;
-			}
-			.active {
-				background-color: #90EE90;
-				font-weight: bold;
+				position: relative;
+				top: -80px;
+				left: -1%;
+				right: 0;
+				margin: auto;
 			}
 			#dialog {
 				max-width: 850px;
@@ -92,7 +60,7 @@
 				overflow: hidden;
 				overflow-y: scroll;
 				position: relative;
-				top: -1375px;
+				top: -1400px;
 				opacity: 1;
 				transform: scale(1, 1); 
 				-webkit-animation: dialogMove 3s;
@@ -126,17 +94,17 @@
 				border-radius: 5px;
 				font-size: 20px;
 				position: relative;
-				top: -1330px;
+				top: -1350px;
 				z-index: 16;
 				-webkit-animation: txt 2s;
 				animation: txt 2s;
 			}
 			@-webkit-keyframes txt {
-					0% {margin-top: 120px;}
+					0% {margin-top: 150px;}
 					100% {margin-top: 0px;}
 			}
 			@keyframes txt {
-					0% {margin-top: 120px;}
+					0% {margin-top: 150px;}
 					100% {margin-top: 0px;}
 			}
 			textarea {
@@ -235,13 +203,13 @@
 			#mycanvas {
 				visibility: hidden;
 				position: relative;
-				top: 15px;
+				top: -20px;
 				z-index: 3;
 			}
 			#canvasBtn {
 				z-index: 3;
 				position: relative;
-				top: -465px;
+				top: -500px;
 				left: 630px;
 				visibility: hidden;
 				width: 70px;
@@ -251,7 +219,7 @@
 				background-color: white;
 				-webkit-transition: background-color 2s;
 				color: deepskyblue;
-  				outline:none;
+  				outline: none;
   				font-family: Helvetica;
   				font-weight: lighter;
   				font-size: 15px;
@@ -265,7 +233,7 @@
 			#whiteCanvas {
 				visibility: hidden;
 				position: relative;
-				top: -425px;
+				top: -450px;
 				width: 600px;
 				height: 450px;
 				background-color: white;
@@ -287,16 +255,6 @@
 				#mainHeader {
 					height: 175px;
 					background-color: white;
-				}
-				ul {
-					right: 17.5%;
-					top: 100px;
-				}
-				li {
-				    font-size: 24px;
-				}
-				li a {
-				    padding: 16px 36px;
 				}
 				.textTitle {
 					right: -35%;

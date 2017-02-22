@@ -1493,129 +1493,7 @@ function outputFormation(question) {
   There is another version of multitask in the R&D section that doesn't use prompts.
   Once i finish that version I will delete this one.
   */
-  if (question.toUpperCase() == 'MULTITASK' || question.toUpperCase() == 'USE MULTITASK' || question.toUpperCase() == 'MT') {
-    var multitask1 = prompt('\nChoose a website');
-    var multitask2 = prompt('\nChoose another website');
-    if ((multitask1.toUpperCase() == 'GOOGLE DOCS' || multitask1.toUpperCase() == 'DOCS') && (multitask2.toUpperCase() == 'GOOGLE' || multitask2.toUpperCase() == 'CHROME' || multitask2.toUpperCase() == 'GOOGLE CHROME')) {
-      var taskWindow1 = window.open('https://docs.google.com/document/create', '', 'width=600,height=800');
-      taskWindow1.moveTo(screen.width / 2, 0);
-      var taskWindow2 = window.open('https://www.google.com/search?q=', '', 'width=600,height=800');
-      taskWindow2.moveTo(screen.width / 2 - 600, 0);
-      answer = ' ' + multitask1 + ' and ' + multitask2 + ' are ready for use';
-    }
-    if ((multitask2.toUpperCase() == 'GOOGLE DOCS' || multitask2.toUpperCase() == 'DOCS') && (multitask1.toUpperCase() == 'GOOGLE' || multitask1.toUpperCase() == 'CHROME' || multitask1.toUpperCase() == 'GOOGLE CHROME')) {
-      var taskWindow1 = window.open('https://docs.google.com/document/create', '', 'width=600,height=800');
-      taskWindow1.moveTo(screen.width / 2, 0);
-      var taskWindow2 = window.open('https://www.google.com/search?q=', '', 'width=600,height=800');
-      taskWindow2.moveTo(screen.width / 2 - 600, 0);
-      answer = ' ' + multitask1 + ' and ' + multitask2 + ' are ready for use';
-    }
-    if ((multitask2.toUpperCase() == 'GOOGLE DOCS' || multitask2.toUpperCase() == 'DOCS') && (multitask1.toUpperCase() == 'TRANS' || multitask1.toUpperCase() == 'TRANSLATE' || multitask1.toUpperCase() == 'GOOGLE TRANSLATE')) {
-      var taskWindow1 = window.open('https://docs.google.com/document/create', '', 'width=600,height=800');
-      taskWindow1.moveTo(screen.width / 2, 0);
-      var taskWindow2 = window.open('https://translate.google.co.in/', '', 'width=600,height=800');
-      taskWindow2.moveTo(screen.width / 2 - 600, 0);
-      answer = ' ' + multitask1 + ' and ' + multitask2 + ' are ready for use';
-    }
-    if ((multitask1.toUpperCase() == 'GOOGLE DOCS' || multitask1.toUpperCase() == 'DOCS') && (multitask2.toUpperCase() == 'TRANS' || multitask2.toUpperCase() == 'TRANSLATE' || multitask2.toUpperCase() == 'GOOGLE TRANSLATE')) {
-      var taskWindow1 = window.open('https://docs.google.com/document/create', '', 'width=600,height=800');
-      taskWindow1.moveTo(screen.width / 2, 0);
-      var taskWindow2 = window.open('https://translate.google.co.in/', '', 'width=600,height=800');
-      taskWindow2.moveTo(screen.width / 2 - 600, 0);
-      answer = ' ' + multitask1 + ' and ' + multitask2 + ' are ready for use';
-    }
-    if ((multitask1.toUpperCase() == 'GMAIL') && (multitask2.toUpperCase() == 'GOOGLE' || multitask2.toUpperCase() == 'CHROME' || multitask2.toUpperCase() == 'GOOGLE CHROME')) {
-      var taskWindow1 = window.open('https://mail.google.com', '', 'width=600,height=800');
-      taskWindow1.moveTo(screen.width / 2, 0);
-      var taskWindow2 = window.open('https://www.google.com/search?q=', '', 'width=600,height=800');
-      taskWindow2.moveTo(screen.width / 2 - 600, 0);
-      answer = ' ' + multitask1 + ' and ' + multitask2 + ' are ready for use';
-    }
-    if ((multitask2.toUpperCase() == 'GMAIL') && (multitask1.toUpperCase() == 'GOOGLE' || multitask1.toUpperCase() == 'CHROME' || multitask1.toUpperCase() == 'GOOGLE CHROME')) {
-      var taskWindow1 = window.open('https://mail.google.com', '', 'width=600,height=800');
-      taskWindow1.moveTo(screen.width / 2, 0);
-      var taskWindow2 = window.open('https://www.google.com/search?q=', '', 'width=600,height=800');
-      taskWindow2.moveTo(screen.width / 2 - 600, 0);
-      answer = ' ' + multitask1 + ' and ' + multitask2 + ' are ready for use';
-    }
-    if ((multitask1.toUpperCase() == 'YAHOO' || multitask1.toUpperCase() == 'YAHOO MAIL') && (multitask2.toUpperCase() == 'GOOGLE' || multitask2.toUpperCase() == 'CHROME' || multitask2.toUpperCase() == 'GOOGLE CHROME')) {
-      var taskWindow1 = window.open('https://www.yahoo.com/', '', 'width=600,height=800');
-      taskWindow1.moveTo(screen.width / 2, 0);
-      var taskWindow2 = window.open('https://www.google.com/search?q=', '', 'width=600,height=800');
-      taskWindow2.moveTo(screen.width / 2 - 600, 0);
-      answer = ' ' + multitask1 + ' and ' + multitask2 + ' are ready for use';
-    }
-    if ((multitask2.toUpperCase() == 'YAHOO' || multitask2.toUpperCase() == 'YAHOO MAIL') && (multitask1.toUpperCase() == 'GOOGLE' || multitask1.toUpperCase() == 'CHROME' || multitask1.toUpperCase() == 'GOOGLE CHROME')) {
-      var taskWindow1 = window.open('https://www.yahoo.com/', '', 'width=600,height=800');
-      taskWindow1.moveTo(screen.width / 2, 0);
-      var taskWindow2 = window.open('https://www.google.com/search?q=', '', 'width=600,height=800');
-      taskWindow2.moveTo(screen.width / 2 - 600, 0);
-      answer = ' ' + multitask1 + ' and ' + multitask2 + ' are ready for use';
-    }
-    if ((multitask1.toUpperCase() == 'NETFLIX') && (multitask2.toUpperCase() == 'IMDB')) {
-      var taskWindow1 = window.open('https://www.netflix.com/', '', 'width=600,height=800');
-      taskWindow1.moveTo(screen.width / 2, 0);
-      var taskWindow2 = window.open('https://www.imdb.com/', '', 'width=600,height=800');
-      taskWindow2.moveTo(screen.width / 2 - 600, 0);
-      answer = ' ' + multitask1 + ' and ' + multitask2 + ' are ready for use';
-    }
-    if ((multitask2.toUpperCase() == 'NETFLIX') && (multitask1.toUpperCase() == 'IMDB')) {
-      var taskWindow1 = window.open('https://www.netflix.com/', '', 'width=600,height=800');
-      taskWindow1.moveTo(screen.width / 2, 0);
-      var taskWindow2 = window.open('https://www.imdb.com/', '', 'width=600,height=800');
-      taskWindow2.moveTo(screen.width / 2 - 600, 0);
-      answer = ' ' + multitask1 + ' and ' + multitask2 + ' are ready for use';
-    }
-    if ((multitask1.toUpperCase() == 'PUTLOCKER') && (multitask2.toUpperCase() == 'IMDB')) {
-      var taskWindow1 = window.open('https://www.putlocker.is', '', 'width=600,height=800');
-      taskWindow1.moveTo(screen.width / 2, 0);
-      var taskWindow2 = window.open('https://www.imdb.com/', '', 'width=600,height=800');
-      taskWindow2.moveTo(screen.width / 2 - 600, 0);
-      answer = ' ' + multitask1 + ' and ' + multitask2 + ' are ready for use';
-    }
-    if ((multitask2.toUpperCase() == 'PUTLOCKER') && (multitask1.toUpperCase() == 'IMDB')) {
-      var taskWindow1 = window.open('https://www.putlocker.is', '', 'width=600,height=800');
-      taskWindow1.moveTo(screen.width / 2, 0);
-      var taskWindow2 = window.open('https://www.imdb.com/', '', 'width=600,height=800');
-      taskWindow2.moveTo(screen.width / 2 - 600, 0);
-      answer = ' ' + multitask1 + ' and ' + multitask2 + ' are ready for use';
-    }
-    if ((multitask1.toUpperCase() == 'YOUTUBE' || multitask1.toUpperCase() == 'YT') && (multitask2.toUpperCase() == 'GOOGLE' || multitask2.toUpperCase() == 'CHROME' || multitask2.toUpperCase() == 'GOOGLE CHROME')) {
-      var taskWindow1 = window.open('https://www.youtube.com/', '', 'width=600,height=800');
-      taskWindow1.moveTo(screen.width / 2, 0);
-      var taskWindow2 = window.open('https://www.google.com/search?q=', '', 'width=600,height=800');
-      taskWindow2.moveTo(screen.width / 2 - 600, 0);
-      answer = 'Youtube and ' + multitask2 + ' are ready for use';
-    }
-    if ((multitask1.toUpperCase() == 'CALC' || multitask1.toUpperCase() == 'CALCULATOR') && (multitask2.toUpperCase() == 'GOOGLE' || multitask2.toUpperCase() == 'CHROME' || multitask2.toUpperCase() == 'GOOGLE CHROME')) {
-      var taskWindow1 = window.open('calc.html', '', 'width=380,height=325');
-      taskWindow1.moveTo(screen.width / 2, 0);
-      var taskWindow2 = window.open('https://www.google.com/search?q=', '', 'width=600,height=800');
-      taskWindow2.moveTo(screen.width / 2 - 600, 0);
-      answer = ' ' + multitask1 + ' and ' + multitask2 + ' are ready for use';
-    }
-    if ((multitask2.toUpperCase() == 'CALC' || multitask2.toUpperCase() == 'CALCULATOR') && (multitask1.toUpperCase() == 'GOOGLE' || multitask1.toUpperCase() == 'CHROME' || multitask1.toUpperCase() == 'GOOGLE CHROME')) {
-      var taskWindow1 = window.open('calc.html', '', 'width=380,height=325');
-      taskWindow1.moveTo(screen.width / 2, 0);
-      var taskWindow2 = window.open('https://www.google.com/search?q=', '', 'width=600,height=800');
-      taskWindow2.moveTo(screen.width / 2 - 600, 0);
-      answer = 'Calculator and ' + multitask1 + ' are ready for use';
-    }
-    if ((multitask1.toUpperCase() == 'CALC' || multitask1.toUpperCase() == 'CALCULATOR') && (multitask2.toUpperCase() == 'SPREADSHEETS' || multitask2.toUpperCase() == 'SHEETS')) {
-      var taskWindow1 = window.open('calc.html', '', 'width=380,height=325');
-      taskWindow1.moveTo(screen.width / 2, 0);
-      var taskWindow2 = window.open('https://docs.google.com/spreadsheet/ccc?new', '', 'width=600,height=800');
-      taskWindow2.moveTo(screen.width / 2 - 600, 0);
-      answer = 'Calculator and google spreadsheets are ready for use';
-    }
-    if ((multitask1.toUpperCase() == 'PAINT' || multitask1.toUpperCase() == 'DRAW') && (multitask2.toUpperCase() == 'GOOGLE' || multitask2.toUpperCase() == 'CHROME' || multitask2.toUpperCase() == 'GOOGLE CHROME')) {
-      var taskWindow1 = window.open('paint.html', '', 'width=600,height=800');
-      taskWindow1.moveTo(screen.width / 2, 0);
-      var taskWindow2 = window.open('https://www.google.com/search?q=', '', 'width=600,height=800');
-      taskWindow2.moveTo(screen.width / 2 - 600, 0);
-      answer = 'Paint and google are ready for use';
-    }
-  }
+  //change this with regex
   if (question.toUpperCase() == 'RESTAURANTS' || question.toUpperCase() == 'FIND RESTAURANTS') {
     var askRes = prompt('\nWhat restaurant do you want me to look for')
     window.open('https://www.google.ro/maps/search/' + askRes);
@@ -1640,13 +1518,16 @@ function outputFormation(question) {
       answer = 'My memory has <em>not</em> been deleted';
     }
   } 
+  if (question == "sudo memory") {
+    answer = "Memory has been deleted";
+  }
 
   //////////////////////////////////////////////////////////////////////////////
   /* Yveete - Math */
   //////////////////////////////////////////////////////////////////////////////
 
   /* 
-    'ansholder' is the placeholder in the prompts.
+    'ansholder' is the is the previous answer that is found on the auto-complete droplist.
     This helpful for when multiplying big numbers and then 
     needing the answer to lets say subtract something. The placeholder 
     will provide the previous anser (multiplication in this case) so you
@@ -1655,180 +1536,110 @@ function outputFormation(question) {
     You can also put an 'x' or a 'y' to solve equations:
     x + 1 = 2
    */
-  if (question.toUpperCase() == 'ADD') {
-    var ansHolder = localStorage.getItem('ansHolder');
-    if (ansHolder != null) {
-      var add1 = prompt('\nType a number or a variable', ansHolder);
-      localStorage.setItem('add1', add1);
-      var add2 = prompt('\nType a number or a variable', ansHolder);
-      localStorage.setItem('add2', add2);
+  if (question.match(/[0-9]/g) && (question.match(".*\\bplus\\b.*") || question.match('\\+'))) {
+    if (question.match(".*\\bx plus\\b.*") && question.match("=")) {
+      var addAns = question.substring(question.indexOf("=") + 1);
+      var clearAll = question.replace(question.substring(question.indexOf("=") -1), '');
+      var addNum2 = clearAll.substring(7);
+      var addCalcMatVar1 = addAns - addNum2;
+      var ansHolder = addCalcMatVar1;
+      localStorage.setItem('ansHolder', ansHolder);
+      var addCalcMatVar1Final = 'x + ' + addNum2 + ' = ' + addAns + "<br><br>x = " + addCalcMatVar1;
+      answer = 'The answer ' + addCalcMatVar1Final;
     } 
-    else if (ansHolder == null) {
-      var add1 = prompt('\nType a number or a variable');
-      localStorage.setItem('add1', add1);
-      var add2 = prompt('\nType a number or a variable');
-      localStorage.setItem('add2', add2);
-    }
-    if ((add1.match(/[0-9]/i)) && (add2.match(/[0-9]/i))) {
-      var addCalc = + add1 + + add2;
-      var addFinal = add1 + ' + ' + add2 + ' = ' + ( + add1 + + add2);
-      localStorage.setItem('addFinal', addFinal);
+    else {
+      var addNum1 = question.replace(/\D.*/g, '');
+      var addNum2 = question.replace(/.*\D/g, '');
+      var addCalc = +addNum1 + +addNum2;
       var ansHolder = addCalc;
       localStorage.setItem('ansHolder', ansHolder);
-      var date = new Date();
-      var addTime = date.getHours() + ' : ' + date.getMinutes() + ' : ' + date.getSeconds();
-      localStorage.setItem('addTime', addTime);
-      answer = 'The answer is' + ' ' + addFinal;
-    } 
-    else if (add1.toUpperCase() == 'X' || add1.toUpperCase() == 'Y') {
-      var msg = new SpeechSynthesisUtterance('Type the answer of the equation');
-      window.speechSynthesis.speak(msg);
-      var addAnswer = prompt('\nType the answer of the equation');
-      var add1Equation = addAnswer - add2;
-      var add1EquationFinal = add2 + ' + ' + add1 + ' = ' + add1Equation + '<br><br>' + add1 + ' = ' + add1Equation;
-      localStorage.setItem('add1EquationFinal', add1EquationFinal);
-      answer = add1 + ' = ' + add1Equation + '<br><br>' + add1EquationFinal;
-    } 
-    else if (add2.toUpperCase() == 'X' || add2.toUpperCase() == 'Y') {
-      var msg = new SpeechSynthesisUtterance('Type the answer of the equation');
-      window.speechSynthesis.speak(msg);
-      var addAnswer = prompt('\nType the result of the equation');
-      var add2EquationFinal = addAnswer - add1;
-      answer = add2 + ' = ' + add2EquationFinal;
-    } 
-    else {
-      answer = 'Your inputs should contain only numbers';
+      var addFinal = addNum1 + ' + ' + addNum2 + ' = ' + ( +addNum1 + +addNum2);
+      answer = 'The answer is ' + addFinal;
     }
   }
-  if (question.toUpperCase() == 'MULTIPLY') {
-    var ansHolder = localStorage.getItem('ansHolder');
-    if (ansHolder != null) {
-      var multiply1 = prompt('\nType a number', ansHolder);
-      localStorage.setItem('multiply1', multiply1);
-      var multiply2 = prompt('\nType another number', ansHolder);
-      localStorage.setItem('multiply2', multiply2);
-    } 
-    else if (ansHolder == null) {
-      var multiply1 = prompt('\nType a number');
-      localStorage.setItem('multiply1', multiply1);
-      var multiply2 = prompt('\nType another number');
-      localStorage.setItem('multiply2', multiply2);
-    }
-    if ((multiply1.match(/[0-9]/i)) && (multiply2.match(/[0-9]/i))) {
-      var multiplyCalc = multiply1 * multiply2;
-      var multiplyFinal = multiply1 + ' x ' + multiply2 + ' = ' + (multiply1 * multiply2);
-      localStorage.setItem('multiplyFinal', multiplyFinal);
-      var ansHolder = multiplyCalc;
+  if (question.match(/[0-9]/g) && (question.match(".*\\bminus\\b.*") || question.match('\\-'))) {
+    if (question.match(".*\\bx minus\\b.*") && question.match("=")) {
+      var subtractAns = question.substring(question.indexOf("=") + 1);
+      var clearAll = question.replace(question.substring(question.indexOf("=") -1), '');
+      var subtractNum2 = clearAll.substring(8);
+      var subtractCalcMatVar1 = +subtractAns + +subtractNum2;
+      var ansHolder = subtractCalcMatVar1;
       localStorage.setItem('ansHolder', ansHolder);
-      var date = new Date();
-      var multiplyTime = date.getHours() + date.getMinutes() + date.getSeconds();
-      localStorage.setItem('multiplyTime', multiplyTime);
-      answer = 'The answer is ' + multiplyFinal;
-    } 
-    else if (multiply1.toUpperCase() == 'X' || multiply1.toUpperCase() == 'Y') {
-      var msg = new SpeechSynthesisUtterance('Type the result of the equation');
-      window.speechSynthesis.speak(msg);
-      var multiplyAnswer = prompt('\nType the answer of the equation');
-      var multiply1EquationFinal = multiplyAnswer / multiply1;
-      answer = multiply1 + ' = ' + multiply1EquationFinal;
-    } 
-    else if (multiply2.toUpperCase() == 'X' || multiply2.toUpperCase() == 'Y') {
-      var msg = new SpeechSynthesisUtterance('Type the result of the equation');
-      window.speechSynthesis.speak(msg);
-      var multiplyAnswer = prompt('\nType the answer of the equation');
-      var multiply2EquationFinal = multiplyAnswer / multiply1;
-      answer = multiply2 + ' = ' + multiply2EquationFinal;
+      var subtractCalcMatVar1Final = 'x - ' + subtractNum2 + ' = ' + subtractAns + "<br><br>x = " + subtractCalcMatVar1;
+      answer = 'The answer ' + subtractCalcMatVar1Final;
     } 
     else {
-      answer = 'Your inputs should contain only numbers';
+      var subtractNum1 = question.replace(/\D.*/g, '');
+      var subtractNum2 = question.replace(/.*\D/g, '');
+      var subtractCalc = subtractNum1 - subtractNum2;
+      var ansHolder = addCalc;
+      localStorage.setItem('ansHolder', ansHolder);
+      var subtractFinal = subtractNum1 + ' - ' + subtractNum2 + ' = ' + subtractCalc;
+      answer = 'The answer is ' + subtractFinal;
     }
   }
-  if (question.toUpperCase() == 'DIVIDE') {
-    var ansHolder = localStorage.getItem('ansHolder');
-    if (ansHolder != null) {
-      var divide1 = prompt('\nType a number', ansHolder);
-      localStorage.setItem('divide1', divide1);
-      var divide2 = prompt('\nType another number', ansHolder);
-      localStorage.setItem('divide2', divide2);
+  if (question.match(/[0-9]/g) && (question.match(".*\\bdivide\\b.*") || question.match("/"))) {
+    if (question.match(".*\\bx divide\\b.*") && (question.match("="))) {
+      var divideAns = question.substring(question.indexOf("=") + 1);
+      var clearAll = question.replace(question.substring(question.indexOf("=") -1), '');
+      var divideNum2 = clearAll.substring(9);
+      var divideCalcMatVar1 = divideAns * divideNum2;
+      var ansHolder = divideCalcMatVar1;
+      localStorage.setItem('ansHolder', ansHolder);
+      var divideCalcMatVar1Final = 'x &divide; ' + divideNum2 + ' = ' + divideAns + "<br><br>x = " + divideCalcMatVar1;
+      answer = 'The answer ' + divideCalcMatVar1Final;
     } 
-    else if (ansHolder == null) {
-      var divide1 = prompt('\nType a number');
-      localStorage.setItem('divide1', divide1);
-      var divide2 = prompt('\nType another number');
-      localStorage.setItem('divide2', divide2);
-    }
-    if ((divide1.match(/[0-9]/i)) && (divide2.match(/[0-9]/i))) {
-      var divideCalc = divide1 / divide2;
-      var divideFinal = divide1 + ' &divide; ' + divide2 + ' = ' + (divide1 / divide2);
-      localStorage.setItem('divideFinal', divideFinal);
+    else if (question.match(".*\\bdivide x\\b.*") && (question.match("="))) {
+      var divideAns = question.substring(question.indexOf("=") + 1);
+      var clearAll = question.replace(question.substring(question.indexOf(" divide")), '');
+      var divideNum1 = clearAll.substring(0);
+      var divideCalcMatVar2 = divideNum1 / divideAns;
+      var ansHolder = divideCalcMatVar2;
+      localStorage.setItem('ansHolder', ansHolder);
+      var divideCalcMatVar2Final = divideNum1 + ' &divide; x = ' + divideAns + "<br><br>x = " + divideCalcMatVar2;
+      answer = 'The answer ' + divideCalcMatVar2Final;
+    } 
+    else {
+      var divideNum1 = question.replace(/\D.*/g, '');
+      var divideNum2 = question.replace(/.*\D/g, '');
+      var divideCalc = divideNum1 / divideNum2;
       var ansHolder = divideCalc;
       localStorage.setItem('ansHolder', ansHolder);
-      var date = new Date();
-      var divideTime = date.getHours() + date.getMinutes() + date.getSeconds();
-      localStorage.setItem('divideTime', divideTime);
+      var divideFinal = divideNum1 + ' &divide; ' + divideNum2 + ' = ' + divideCalc;
       answer = 'The answer is ' + divideFinal;
-    } 
-    else if (divide1.toUpperCase() == 'X' || divide1.toUpperCase() == 'Y') {
-      var msg = new SpeechSynthesisUtterance('Type the result of the equation');
-      window.speechSynthesis.speak(msg);
-      var divideAnswer = prompt('\nType the result of the equation');
-      var divide1EquationFinal = divide2 * divideAnswer;
-      answer = divide1 + ' = ' + divide1EquationFinal;
-    } 
-    else if (divide2.toUpperCase() == 'X' || divide2.toUpperCase() == 'Y') {
-      var msg = new SpeechSynthesisUtterance('Type the result of the equation');
-      window.speechSynthesis.speak(msg);
-      var divideAnswer = prompt('\nType the answer of the equation');
-      var divide2EquationFinal = divide1 / divideAnswer;
-      answer = divide2 + ' = ' + divide2EquationFinal;
-    } 
-    else {
-      answer = 'Your inputs should contain only numbers';
     }
   }
-  if (question.toUpperCase() == 'SUBTRACT' || question.toUpperCase() == 'MINUS') {
-    var ansHolder = localStorage.getItem('ansHolder');
-    if (ansHolder != null) {
-      var subtract1 = prompt('\nType a number', ansHolder);
-      localStorage.setItem('subtract1', subtract1);
-      var subtract2 = prompt('\nType another number', ansHolder);
-      localStorage.setItem('subtract2', subtract2);
-    } 
-    else if (ansHolder == null) {
-      var subtract1 = prompt('\nType a number');
-      localStorage.setItem('subtract1', subtract1);
-      var subtract2 = prompt('\nType another number');
-      localStorage.setItem('subtract2', subtract2);
-    }
-    if ((subtract1.match(/[0-9]/i)) && (subtract2.match(/[0-9]/i))) {
-      var subtractCalc = subtract1 - subtract2;
-      var subtractFinal = subtract1 + ' - ' + subtract2 + ' = ' + (subtract1 - subtract2);
-      localStorage.setItem('subtractFinal', subtractFinal);
-      var ansHolder = subtractCalc;
+  if (question.match(/[0-9]/g) && (question.match(".*\\btimes\\b.*") || (question.match("x") && question.match('^(?!.*[minus|plus|divide]).*$')))) {
+    if (question.match(".*\\bx times\\b.*") && question.match('=')) {
+      var multiplyAns = question.substring(question.indexOf("=") + 1);
+      var clearAll = question.replace(question.substring(question.indexOf("=") -1), '');
+      var multiplyNum2 = clearAll.substring(8);
+      var multiplyCalcMatVar1 = multiplyAns / multiplyNum2;
+      var ansHolder = multiplyCalcMatVar1;
       localStorage.setItem('ansHolder', ansHolder);
-      var date = new Date();
-      var subtractTime = date.getHours() + date.getMinutes() + date.getSeconds();
-      localStorage.setItem('subtractTime', subtractTime);
-      answer = 'The answer is' + ' ' + subtractFinal;
-    } 
-    else if (subtract1.toUpperCase() == 'X' || subtract1.toUpperCase() == 'Y') {
-      var msg = new SpeechSynthesisUtterance('Type the result of the equation');
-      window.speechSynthesis.speak(msg);
-      var subtractAnswer = prompt('\nType the result of the equation');
-      var subtract1EquationFinal = + subtract2 + + subtractAnswer;
-      answer = subtract1 + ' = ' + subtract1EquationFinal;
-    } 
-    else if (subtract2.toUpperCase() == 'X' || subtract2.toUpperCase() == 'Y') {
-      var msg = new SpeechSynthesisUtterance('Type the result of the equation');
-      window.speechSynthesis.speak(msg);
-      var subtractAnswer = prompt('\nType the answer of the equation');
-      var subtract2EquationFinal = subtract1 - subtractAnswer;
-      answer = subtract2 + ' = ' + subtract2EquationFinal;
-    } 
-    else {
-      answer = 'Your inputs should contain only numbers';
+      var multiplyCalcMatVar1Final = 'x * ' + multiplyNum2 + ' = ' + multiplyAns + "<br><br>x = " + multiplyCalcMatVar1;
+      answer = 'The answer ' + multiplyCalcMatVar1Final;
     }
-  } 
+    else if (question.match(".*\\btimes x\\b.*") && question.match('=')) {
+      var multiplyAns = question.substring(question.indexOf("=") + 1);
+      var clearAll = question.replace(question.substring(question.indexOf("=") -1), '');
+      var multiplyNum1 = clearAll.substring(0);
+      var multiplyCalcMatVar2 = multiplyAns / multiplyNum1;
+      var ansHolder = multiplyCalcMatVar2;
+      localStorage.setItem('ansHolder', ansHolder);
+      var multiplyCalcMatVar2Final = multiplyNum1 + ' * x = ' + multiplyAns + "<br><br>x = " + multiplyCalcMatVar2;
+      answer = 'The answer ' + multiplyCalcMatVar2Final;
+    }
+    else {
+      var multiplyNum1 = question.replace(/\D.*/g, '');
+      var multiplyNum2 = question.replace(/.*\D/g, '');
+      var multiplyCalc = multiplyNum1 * multiplyNum2;
+      var ansHolder = multiplyCalc;
+      localStorage.setItem('ansHolder', ansHolder);
+      var multiplyFinal = multiplyNum1 + ' x ' + multiplyNum2 + ' = ' + multiplyCalc;
+      answer = 'The answer is ' + multiplyFinal;
+    }
+  }
   //alternative
   if (question.match('.*\\broot\\b.*')) {
     var sqrtValue = question.substring(5);
@@ -2365,14 +2176,6 @@ function outputFormation(question) {
     }    //answer = "(" + userString + ", " + commandString + "), <br><br>" + windowOpenLinkCleared + ", <br><br>" + editedAnswerCleared
 
   }
-  if (question == 'run sc') {
-    var debugSCTrigger = 'true';
-    localStorage.setItem('debugSCTrigger', debugSCTrigger);
-    answer = 'smartcode ready, please reload';
-  }
-  if (question == 'view sc') {
-    answer = addedScriptSC;
-  }
   if (question.match('.*\\bsmartcode\\b.*')) {
     var editorBox = document.getElementById('prompt3');
     var saveBtn = document.getElementById('btnPrompt');
@@ -2429,172 +2232,6 @@ function outputFormation(question) {
   but there is always a reason why they are here.
 
   */
-
-  if (question.toUpperCase() == 'SAVE FACETIME CONTACT AS 1' || question.toUpperCase() == 'SAVE FACETIME AS 1') {
-    var askFacetime1 = prompt('\nType the name of the person');
-    localStorage.setItem('askFacetime1', askFacetime1);
-    var facetime1 = prompt('\nType his/her email/apple id / phone number');
-    localStorage.setItem('facetime1', facetime1);
-    if ((askFacetime1 != null) && (facetime1 != null)) {
-      var msg = new SpeechSynthesisUtterance('Your contact has been saved');
-      window.speechSynthesis.speak(msg);
-      var ftTrigger = 'true';
-      localStorage.setItem('ftTrigger', ftTrigger);
-      answer = 'Your contact has been saved';
-    } 
-    else {
-      var msg = new SpeechSynthesisUtterance('Something went wrong, I am sorry');
-      window.speechSynthesis.speak(msg);
-      answer = 'Something went wrong, I am sorry';
-    }
-  }
-  if (question.toUpperCase() == 'SAVE FACETIME CONTACT AS 2' || question.toUpperCase() == 'SAVE FACETIME AS 2') {
-    var askFacetime2 = prompt('\nType the name of the person');
-    localStorage.setItem('askFacetime2', askFacetime2);
-    var facetime2 = prompt('\nType his/her email/apple id / phone number');
-    localStorage.setItem('facetime2', facetime2);
-    if ((askFacetime2 != null) && (facetime2 != null)) {
-      var msg = new SpeechSynthesisUtterance('Your contact has been saved');
-      window.speechSynthesis.speak(msg);
-      answer = 'Your contact has been saved';
-    } 
-    else {
-      var msg = new SpeechSynthesisUtterance('Something went wrong, I am sorry');
-      window.speechSynthesis.speak(msg);
-      answer = 'Something went wrong, I am sorry';
-    }
-  }
-  if (question.toUpperCase() == 'SAVE FACETIME CONTACT AS 3' || question.toUpperCase() == 'SAVE FACETIME AS 3') {
-    var askFacetime3 = prompt('\nType the name of the person');
-    localStorage.setItem('askFacetime3', askFacetime3);
-    var facetime3 = prompt('\nType his/her email/apple id / phone number');
-    localStorage.setItem('facetime3', facetime3);
-    if ((askFacetime3 != null) && (facetime3 != null)) {
-      var msg = new SpeechSynthesisUtterance('Your contact has been saved');
-      window.speechSynthesis.speak(msg);
-      answer = 'Your contact has been saved';
-    } 
-    else {
-      var msg = new SpeechSynthesisUtterance('Something went wrong, I am sorry');
-      window.speechSynthesis.speak(msg);
-      answer = 'Something went wrong, I am sorry';
-    }
-  }
-  if (question.toUpperCase() == 'SAVE FACETIME CONTACT AS 4' || question.toUpperCase() == 'SAVE FACETIME AS 4') {
-    var askFacetime4 = prompt('\nType the name of the person');
-    localStorage.setItem('askFacetime4', askFacetime4);
-    var facetime4 = prompt('\nType his/her email/apple id / phone number');
-    localStorage.setItem('facetime4', facetime4);
-    if ((askFacetime4 != null) && (facetime4 != null)) {
-      var msg = new SpeechSynthesisUtterance('Your contact has been saved');
-      window.speechSynthesis.speak(msg);
-      answer = 'Your contact has been saved';
-    } 
-    else {
-      var msg = new SpeechSynthesisUtterance('Something went wrong, I am sorry');
-      window.speechSynthesis.speak(msg);
-      answer = 'Something went wrong, I am sorry';
-    }
-  }
-  if (question.toUpperCase() == 'SAVE FACETIME CONTACT AS 5' || question.toUpperCase() == 'SAVE FACETIME AS 5') {
-    var askFacetime5 = prompt('\nType the name of the person');
-    localStorage.setItem('askFacetime5', askFacetime5);
-    var facetime5 = prompt('\nType his/her email/apple id / phone number');
-    localStorage.setItem('facetime5', facetime5);
-    if ((askFacetime5 != null) && (facetime5 != null)) {
-      var msg = new SpeechSynthesisUtterance('Your contact has been saved');
-      window.speechSynthesis.speak(msg);
-      answer = 'Your contact has been saved';
-    } 
-    else {
-      var msg = new SpeechSynthesisUtterance('Something went wrong, I am sorry');
-      window.speechSynthesis.speak(msg);
-      answer = 'Something went wrong, I am sorry';
-    }
-  }
-  if (question.toUpperCase() == 'SAVE FACETIME CONTACT AS 6' || question.toUpperCase() == 'SAVE FACETIME AS 6') {
-    var msg = new SpeechSynthesisUtterance('You can\'t add more than 5 facetime contacts');
-    window.speechSynthesis.speak(msg);
-    answer = 'You can\'t add more than 5 facetime contacts';
-  }
-  if (question.toUpperCase() == 'CALL FACETIME' || question.toUpperCase() == 'FACETIME CALL') {
-    var askCallFT = prompt('\nWith who?');
-    if (askCallFT == askFacetime1) {
-      window.open('facetime://' + facetime1);
-      answer = 'You can now talk with ' + askFacetime1;
-    } 
-    else {
-      answer = 'something went wrong, I am sorry';
-    }
-  }
-  if (question.toUpperCase() == 'SHOW FACETIME CONTACTS' || question.toUpperCase() == 'FACETIME CONTACTS' || question.toUpperCase() == 'FT CONTACTS') {
-    var fterased = localStorage.getItem('fterased');
-    var ftTrigger = localStorage.getItem('ftTrigger');
-    if (fterased != 'true') {
-      if (ftTrigger == 'true') {
-        fterased = null;
-        var msg = new SpeechSynthesisUtterance('Here are all the facetime contacts');
-        window.speechSynthesis.speak(msg);
-        answer = 'Here is the list of facetime contacts that I remember:' + '<br/><br/>' +
-        '<u>FACETIME CONTACTS</u>' + '<br/><br/>' +
-        '<em>' + askFacetime1 + '</em> : ' + facetime1 + ' <a href =\'facetime://\'' +
-        facetime1 + '>Call now</a>' + '<br/><br/>' +
-        '<em>' + askFacetime2 + '</em> : ' + facetime2 + ' <a href =\'facetime://\'' +
-        facetime2 + '>Call now</a>' + '<br/><br/>' +
-        '<em>' + askFacetime3 + '</em> : ' + facetime3 + ' <a href =\'facetime://\'' +
-        facetime3 + '>Call now</a>' + '<br/><br/>' +
-        '<em>' + askFacetime4 + '</em> : ' + facetime4 + ' <a href =\'facetime://\'' +
-        facetime4 + '>Call now</a>' + '<br/><br/>' +
-        '<em>' + askFacetime5 + '</em> : ' + facetime5 + ' <a href =\'facetime://\'' +
-        facetime5 + '>Call now</a>';
-      } 
-      else {
-        var msg = new SpeechSynthesisUtterance('Your facetime contacts have been deleted');
-        window.speechSynthesis.speak(msg);
-        answer = 'Your facetime contacts have been deleted';
-      }
-    } 
-    else if (ftTrigger == 'true') {
-      var msg = new SpeechSynthesisUtterance('Here are all the facetime contacts');
-      window.speechSynthesis.speak(msg);
-      answer = 'Here is the list of facetime contacts that I remember:' + '<br/><br/>' +
-      '<u>FACETIME CONTACTS</u>' + '<br/><br/>' +
-      '<em>' + askFacetime1 + '</em> : ' + facetime1 + ' <a href =\'facetime://\'' +
-      facetime1 + '>Call now</a>' + '<br/><br/>' +
-      '<em>' + askFacetime2 + '</em> : ' + facetime2 + ' <a href =\'facetime://\'' +
-      facetime2 + '>Call now</a>' + '<br/><br/>' +
-      '<em>' + askFacetime3 + '</em> : ' + facetime3 + ' <a href =\'facetime://\'' +
-      facetime3 + '>Call now</a>' + '<br/><br/>' +
-      '<em>' + askFacetime4 + '</em> : ' + facetime4 + ' <a href =\'facetime://\'' +
-      facetime4 + '>Call now</a>' + '<br/><br/>' +
-      '<em>' + askFacetime5 + '</em> : ' + facetime5 + ' <a href =\'facetime://\'' +
-      facetime5 + '>Call now</a>';
-    } 
-    else {
-      var msg = new SpeechSynthesisUtterance('You don\'t have any facetime contacts');
-      window.speechSynthesis.speak(msg);
-      answer = 'You don\'t have any facetime contacts';
-    }
-  }
-  if (question.toUpperCase() == 'DELETE FT CONTACTS' || question.toUpperCase() == 'DELETE FACETIME CONTACTS' || question.toUpperCase() == 'CLEAR FT CONTACTS' || question.toUpperCase() == 'CLEAR FACETIME CONTACTS' || question.toUpperCase() == 'ERASE FT CONTACTS' || question.toUpperCase() == 'ERASE FACETIME CONTACTS') {
-    //facetime phone nr / email
-    localStorage.removeItem('facetime1');
-    localStorage.removeItem('facetime2');
-    localStorage.removeItem('facetime3');
-    localStorage.removeItem('facetime4');
-    localStorage.removeItem('facetime5');
-    //people's names
-    localStorage.removeItem('askFacetime1');
-    localStorage.removeItem('askFacetime2');
-    localStorage.removeItem('askFacetime3');
-    localStorage.removeItem('askFacetime4');
-    localStorage.removeItem('askFacetime5');
-    var fterased = 'true';
-    localStorage.setItem('fterased', fterased);
-    var msg = new SpeechSynthesisUtterance('Your facetime contacts have been deleted');
-    window.speechSynthesis.speak(msg);
-    answer = 'Your facetime contacts have been deleted';
-  }
   if (question.toUpperCase() == 'CREATE A DOCUMENT' || question.toUpperCase() == 'CREATE DOCUMENT' || question.toUpperCase() == 'CREATE DOC' || question.toUpperCase() == 'CREATE A DOC') {
     var docTitle = prompt('\nType the title of the document');
     localStorage.setItem('docTitle', docTitle);
@@ -2615,65 +2252,20 @@ function outputFormation(question) {
     answer = 'Your document has been created';
   }
   if ((question.match('.*\\bemail\\b.*')) && (question.match('\\b' + emailName1)) && (question.match('^(?!.*reminder).*$')) && (question.match('^(?!.*save).*$')) && (question.match('^(?!.*delete).*$'))) {
-    var msg1 = new SpeechSynthesisUtterance('Fill in the following inputs');
-    window.speechSynthesis.speak(msg1);
-    var emailPrompt = document.getElementById('prompt1');
-    var emailInput = document.getElementById('titleInput');
-    emailPrompt.style.zIndex = '20';
-    var blur = document.getElementById('blur');
-    blur.style.visibility = 'visible';
-    var btnPrompt = document.getElementById('btnPrompt');
-    btnPrompt.value = 'Submit';
-    btnPrompt.style.visibility = 'visible';
-    emailPrompt.style.visibility = 'visible';
-    emailInput.style.visibility = 'visible';
-    btnPrompt.onclick = function () {
-      var titleInputEmail = document.getElementById('titleInput').value;
-      var promptMessageEmail = document.getElementById('prompt1').value;
-      btnPrompt.style.visibility = 'hidden';
-      emailPrompt.style.visibility = 'hidden';
-      emailInput.style.visibility = 'hidden';
-      blur.style.visibility = 'hidden';
-      window.open('mailto:' + emailAddress1 + '?subject=' + titleInputEmail + '&body=' + promptMessageEmail);
-    }
+    //find this functions in additional-scripts/functions.js
+    emailDisplay();
+    submitEmailButton1();
     answer = 'Your email has opened on a new window';
   }
   if ((question.match('.*\\bemail\\b.*')) && (question.match('\\b' + emailName2)) && (question.match('^(?!.*reminder).*$')) && (question.match('^(?!.*save).*$')) && (question.match('^(?!.*delete).*$'))) {
     emailDisplay();
-
+    submitEmailButton2();
     answer = 'Your email has opened on a new window';
   }
   if ((question.match('.*\\bemail\\b.*')) && (question.match('\\b' + emailName3)) && (question.match('^(?!.*reminder).*$')) && (question.match('^(?!.*save).*$')) && (question.match('^(?!.*delete).*$'))) {
-    var msg1 = new SpeechSynthesisUtterance('Fill in the following inputs');
-    window.speechSynthesis.speak(msg1);
-    var emailPrompt = document.getElementById('prompt1');
-    var emailInput = document.getElementById('titleInput');
-    emailPrompt.style.zIndex = '20';
-    var blur = document.getElementById('blur');
-    var btnPrompt = document.getElementById('btnPrompt');
-    btnPrompt.value = 'Submit';
-    btnPrompt.style.visibility = 'visible';
-    emailPrompt.style.visibility = 'visible';
-    emailInput.style.visibility = 'visible';
-    blur.style.visibility = 'visible';
-    btnPrompt.onclick = function () {
-      var titleInputEmail = document.getElementById('titleInput').value;
-      var promptMessageEmail = document.getElementById('prompt1').value;
-      btnPrompt.style.visibility = 'hidden';
-      var blur = document.getElementById('blur');
-      emailPrompt.style.visibility = 'hidden';
-      emailInput.style.visibility = 'hidden';
-      blur.style.visibility = 'hidden';
-      window.open('mailto:' + emailAddress3 + '?subject=' + titleInputEmail + '&body=' + promptMessageEmail);
-    }
+    emailDisplay();
+    submitEmailButton3();
     answer = 'Your email has opened on a new window';
-  }
-  if ((question.match('.*\\bdocs\\b.*')) && (question.match('.*\\bgoogle\\b.*'))) {
-    var taskWindow1 = window.open('https://docs.google.com/document/create', '', 'width=600,height=800');
-    taskWindow1.moveTo(screen.width / 2, 0);
-    var taskWindow2 = window.open('https://www.google.com/search?q=', '', 'width=600,height=800');
-    taskWindow2.moveTo(screen.width / 2 - 600, 0);
-    answer = 'Docs and Google are ready for use';
   }
   if ((question.match('.*\\breminder\\b.*')) && (question.match('.*\\bsend email\\b.*')) && (question.match('\\b' + emailName1))) {
     var timeReminderEmailInput = prompt('\nSet a time in minutes', '');
@@ -2749,63 +2341,24 @@ function outputFormation(question) {
     answer = 'The chart is ready';
   }
   if (question == 'break even chart') {
-    canvasChart.style.visibility = 'visible';
-    canvasBtn.style.visibility = 'visible';
-    canvasWhite.style.visibility = 'visible';
-    canvasBtn.onclick = function() {
-      canvasChart.style.visibility = "hidden";
-      canvasBtn.style.visibility = "hidden";
-      canvasWhite.style.visibility = "hidden";
+    var header = document.getElementById('allHeader');
+    if (header.style.visibility == "hidden") {
+      answer = "The chart cannot be displayed on the minimized display. Double click anywhere on this dialog to go back to normal view.";
+    } else {
+        canvasChart.style.visibility = 'visible';
+        canvasBtn.style.visibility = 'visible';
+        canvasWhite.style.visibility = 'visible';
+        canvasBtn.onclick = function() {
+          canvasChart.style.visibility = "hidden";
+          canvasBtn.style.visibility = "hidden";
+          canvasWhite.style.visibility = "hidden";
+        }
+      var msg = new SpeechSynthesisUtterance("Here is the chart");
+      window.speechSynthesis.speak(msg);
+      answer = 'Here is the chart';
     }
-    var msg = new SpeechSynthesisUtterance("Here is the chart");
-    window.speechSynthesis.speak(msg);
-    answer = 'Here is the chart';
-  }  
 
-  if ((question.match('.*\\bft\\b.*')) && (question.match('^(?!.*contacts).*$'))) {
-    var facetimePerson = question.substring(3);
-    if (facetimePerson == askFacetime1) {
-      window.open('facetime://' + facetime1);
-      var msg = new SpeechSynthesisUtterance('You can now talk with ' + askFacetime1);
-      window.speechSynthesis.speak(msg);
-      answer = 'You can now talk with ' + askFacetime1;
-    } 
-    else if (facetimePerson == askFacetime2) {
-      window.open('facetime://' + facetime2);
-      var msg = new SpeechSynthesisUtterance('You can now talk with ' + askFacetime2);
-      window.speechSynthesis.speak(msg);
-      answer = 'You can now talk with ' + askFacetime2;
-    } 
-    else if (facetimePerson == askFacetime3) {
-      window.open('facetime://' + facetime3);
-      var msg = new SpeechSynthesisUtterance('You can now talk with ' + askFacetime3);
-      window.speechSynthesis.speak(msg);
-      answer = 'You can now talk with ' + askFacetime3;
-    } 
-    else if (facetimePerson == askFacetime4) {
-      window.open('facetime://' + facetime4);
-      var msg = new SpeechSynthesisUtterance('You can now talk with ' + askFacetime4);
-      window.speechSynthesis.speak(msg);
-      answer = 'You can now talk with ' + askFacetime4;
-    } 
-    else if (facetimePerson == askFacetime5) {
-      window.open('facetime://' + facetime5);
-      var msg = new SpeechSynthesisUtterance('You can now talk with ' + askFacetime5);
-      window.speechSynthesis.speak(msg);
-      answer = 'You can now talk with ' + askFacetime5;
-    } 
-    else if (facetimePerson != null) {
-      window.open('facetime://' + facetimePerson);
-      var msg = new SpeechSynthesisUtterance('Facetime has opened');
-      window.speechSynthesis.speak(msg);
-      answer = 'Facetime has opened';
-    } 
-    else if (facetimePerson == null) {
-      var msg = new SpeechSynthesisUtterance('You did not type the person\'s info');
-      window.speechSynthesis.speak(msg);
-      answer = 'You did not type the person\'s info';
-    }
-  }
+  }  
   if (question.match('.*\\bi live in\\b.*')) {
     var userLocation = question.substring(10);
     localStorage.setItem('userLocation', userLocation);
@@ -2813,28 +2366,32 @@ function outputFormation(question) {
       answer = 'I will remember than you live in ' + userLocation + ' from now on';
     }
   }
-  /* 
-  this is how the weather works. only that it doesn't really.
-  Find the ajax script on the ajax scripts folder.
-  */
-  if (question.match('.*\\bweather\\b.*')) {
-    var userLocation = localStorage.getItem('userLocation');
-    var locationWeather = question.substring(8);
-    if (locationWeather != null) {
-      localStorage.setItem('locationWeather', locationWeather);
-      answer = 'The temperature is ' + temp;
-    }
-    if (userLocation == null) {
-      var userLocation = prompt('\nWhere do you live');
-      localStorage.setItem('userLocation', userLocation);
-      answer = 'location saved';
-    }
-    if (userLocation != null) {
-      var locationWeather = userLocation;
-      localStorage.setItem('locationWeather', locationWeather);
-      answer = locationWeather + ' ' + temp;
-    }
-  }
+   var weatherTempC = localStorage.getItem('weatherTempC', weatherTempC);
+   if (question.match('.*\\bweather\\b.*')) {
+      var receivedTempValue = document.getElementById('temp').innerHTML;
+      var userLocation = question.substring(8);
+      function getWeather() {
+        $.getJSON('http://api.wunderground.com/api/58a1b29a6b2c67d6/conditions/q/' + userLocation + '.json', function(data) {
+          var weatherTemp = data['current_observation']['temperature_string'];
+          var weatherTempC = data['current_observation']['temp_c'];
+          var receivedTemp = $('#temp').html(weatherTemp);
+          localStorage.setItem('receivedTemp', receivedTemp);
+          localStorage.setItem('weatherTempC', weatherTempC);
+        });
+        setTimeout(getWeather, 3000);
+      }
+      getWeather();
+      if (receivedTempValue.match(/[0-9]/g)) {
+        var msg1 = new SpeechSynthesisUtterance('The temperature is ' + weatherTempC + " celsius");
+        window.speechSynthesis.speak(msg1);
+        answer = "The temperature in " + userLocation + " is " + receivedTempValue;
+      }
+      if (!receivedTempValue.match(/[0-9]/g)) {
+        var msg2 = new SpeechSynthesisUtterance("Weather information is loading, ask me again in a moment.");
+        window.speechSynthesis.speak(msg2);
+        answer = "Weather information is loading, ask me again in a moment.";
+      }
+   }
   /* 
     this works great, it is for displaying the news
     check the ajax script on the other folder. 
@@ -2863,7 +2420,15 @@ function outputFormation(question) {
      and crashing.
    */
   var dictTrigger = localStorage.getItem('dictTrigger');
+  var definition = localStorage.getItem('definition');
   if (question.match('.*\\bdict\\b.*')) {
+    var dictInput = question.substring(5);
+    if (dictInput != null) {
+      localStorage.setItem('dictInput', dictInput);
+      answer = definition;
+    }
+  }
+  /*if (question.match('.*\\bdict\\b.*')) {
     var dictInput = question.substring(5);
     if (dictInput != null) {
       localStorage.setItem('dictInput', dictInput);
@@ -2880,7 +2445,7 @@ function outputFormation(question) {
     else {
       answer = 'definition loading, try again.';
     }
-  }
+  }*/
   if (question == 'enable dictionary') {
     var enableDict = 'true';
     localStorage.setItem('enableDict', enableDict);
@@ -2916,6 +2481,3 @@ function outputFormation(question) {
 function displayOutput(message, destination) {
   destination.innerHTML += message;
 }
-//select the <input> when user enters the website
-document.getElementById('inputText').select();
-
