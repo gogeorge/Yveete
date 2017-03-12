@@ -82,15 +82,6 @@ function outputFormation(question) {
   var changeTitle2 = localStorage.getItem('changeTitle2');
   var savedNote3 = localStorage.getItem('savedNote3');
   var changeTitle3 = localStorage.getItem('changeTitle3');
-  //fb chat /names
-  var askFbFriend = localStorage.getItem('askFbFriend');
-  var askFbUrl = localStorage.getItem('askFbUrl');
-  var askFbFriend2 = localStorage.getItem('askFbFriend2');
-  var askFbUrl2 = localStorage.getItem('askFbUrl2');
-  var askFbFriend3 = localStorage.getItem('askFbFriend3');
-  var askFbUrl3 = localStorage.getItem('askFbUrl3');
-  var askFbFriend4 = localStorage.getItem('askFbFriend4');
-  var askFbUrl4 = localStorage.getItem('askFbUrl4');
   //places
   var place = localStorage.getItem('place');
   var flightFrom = localStorage.getItem('flightFrom');
@@ -429,20 +420,6 @@ function outputFormation(question) {
       window.speechSynthesis.speak(msg1);
       answer = 'I found ' + place + ' on google maps';
     }
-  }
-  if (question.match('.*\\bsearch\\b.*')) {
-    var searchg = question.substring(6);
-    if (searchg != null) {
-      window.open('https://www.google.com/search?q=' + searchg);
-      answer = 'Google has opened in a new window';
-    }
-  }
-  if (question.match('.*\\byt\\b.*')) {
-    var searchy = question.substring(4);
-    if (searchy != null) {
-      window.open('https://www.youtube.com/results?search_query=' + searchy);
-      answer = 'Your Youtube search has opened in a new window';
-    }
   } 
 
  //////////////////////////////////////////////////////////////////////////////
@@ -456,21 +433,6 @@ function outputFormation(question) {
     window.speechSynthesis.speak(msg);
     answer = 'The time is ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
   }  
-  //This interaction will remain a comment until i finish 
-  //something similar but better in the R&D sections
-  /*
-					if (question.match(".*\\bweather\\b.*")) {
-						var weather = question.substring(8);
-						if (weather != null) {
-							window.open('https://www.google.com/search?q=weather%20' + weather);
-							answer = "Weather has opened on another tab";
-						}
-						if (weather == null) {
-							window.open('https://www.google.com/search?q=weather%20');
-							answer = "Weather has opened on another tab";
-						}
-					}
-	*/
 
   //When user types 'save email as <person's name of the email>' this is what happens:
   if (question.match('.*\\bsave email as\\b.*')) {
@@ -2058,34 +2020,58 @@ function outputFormation(question) {
   typing the instructions.
 
   */
-
+  //temp: if (question == "buenos dias") answer = "muy bien";
+  var beforeScript = localStorage.getItem('beforeScript');
   if (question.toUpperCase() == 'EDIT SCRIPT') {
-    var editorBox = document.getElementById('prompt2');
-    var saveBtn = document.getElementById('btnPrompt');
-    saveBtn.value = 'Save';
-    editorBox.style.visibility = 'visible';
-    saveBtn.style.visibility = 'visible';
+    btnPrompt.value = 'Save';
+    prompt2.style.visibility = 'visible';
+    btnPrompt.style.visibility = 'visible';
+    if (addedScript == null) {
+      prompt2.value = 'type here';
+    } else {
+      prompt2.value = addedScript;
+    }
+    localStorage.setItem('addedScript', addedScript);
     answer = "You can now edit the script";
-    saveBtn.onclick = function () {
-      var addedScript = document.getElementById('prompt2').value;
-      editorBox.style.visibility = 'hidden';
-      saveBtn.style.visibility = 'hidden';
+    btnPrompt.onclick = function () {
+      var addedScript = prompt2.value;
+      prompt2.style.visibility = 'hidden';
+      btnPrompt.style.visibility = 'hidden';
       var editorTrigger = 'true';
       localStorage.setItem('editorTrigger', editorTrigger);
       if (addedScript.match('.*\\bif\\b.*') && addedScript.match('.*\\bquestion\\b.*')
           && addedScript.match('.*\\banswer\\b.*') && addedScript.match('=')) {
         localStorage.setItem('addedScript', addedScript);
-        alert('noDebugTrigger');
+        localStorage.setItem('beforeScript', beforeScript);
         var noDebugTrigger = 'true';
         localStorage.setItem('noDebugTrigger', noDebugTrigger);
         //localStorage.removeItem('noDebugTrigger');
       } 
-      else if ((addedScript.match('"^(?!.*if).*$"')) || (addedScript.match('"^(?!.*question).*$"')) || (addedScript.match('"^(?!.*answer).*$"'))) {
-        alert('DebugTrigger');
-        var debugTrigger = 'true';
-        localStorage.setItem('debugTrigger', debugTrigger);
-        localStorage.setItem('addedScript', addedScript);
-      } 
+
+      /* 
+      This is a small debugger to prevent users from messing with the mainYveete.js script
+      */
+      if (addedScript.match("^(?!.*if).*$")) {
+        debuggerDisplay();
+        error.innerHTML = "<b>Syntax Error</b>: 'if' not found in the code<br>";
+        debuggerOnclick();
+      } else if ('.*\\bif\\b.*') {
+        error.innerHTML = "";
+      }
+      if (addedScript.match("^(?!.*question).*$")) {
+        debuggerDisplay();
+        error.innerHTML += "<b>Syntax Error</b>: the 'question' variable was not found in the code<br>";
+        debuggerOnclick();
+      } else if ('.*\\bquestion\\b.*') {
+        error.innerHTML += "";
+      }
+      if (addedScript.match("^(?!.*answer).*$")) {
+        debuggerDisplay();
+        error.innerHTML += "<b>Syntax Error</b>: the 'answer' variable was not found in the code<br>";
+        debuggerOnclick();
+      } else if ('.*\\banswer\\b.*') {
+        error.innerHTML += "";
+      }
     }   
   }
   if (question.toUpperCase() == 'DELETE SCRIPT') {
@@ -2108,29 +2094,25 @@ function outputFormation(question) {
       var windowOpenLinkCleared = '\'' + windowOpenLinkCleared.slice(0, - 1) + '\'';
       if (commandString.match('.*\\banswer\\b.*')) {
         var editedAnswer = commandString.substring(commandString.indexOf('=') + 2);
-        var editedAnswerCleared = '\'' + editedAnswer + '\';';
-        var addedScriptSC = 'if (question == ' + userString + ') {window.open(' + windowOpenLinkCleared + ');answer = ' + editedAnswerCleared + '}';
+        var editedAnswerCleared = '\'' + editedAnswer + '\'';
+        var addedScriptSC = "if (question == " + userString + ") {" + 
+          "var msg = new SpeechSynthesisUtterance(" +  editedAnswerCleared + ");" + 
+          "window.speechSynthesis.speak(msg);" + 
+          "window.open(" + windowOpenLinkCleared + ");answer = " + editedAnswerCleared + ";}";
         localStorage.setItem('addedScriptSC', addedScriptSC);
         var debugSCTrigger = 'true';
         localStorage.setItem('debugSCTrigger', debugSCTrigger);
-        /*"userString = " + userString + "<br>" +
-                     "windowOpenLinkCleared = " + windowOpenLinkCleared + "<br>" +
-                     "editedAnswerCleared = " + editedAnswerCleared + "<br>";*/
-        /* 
-                     if user types 'heey' then "new tab https://www.facebook.com/ and answer = hello."
-                    */
         answer = 'Alright, I understood what you taught me';
       }
     } 
     else if (commandString.match('.*\\banswer\\b.*')) {
       var editedAnswer = commandString.substring(commandString.indexOf('=') + 2);
-      var editedAnswerCleared = '\'' + editedAnswer + '\';';
-      alert(editedAnswerCleared + " nr2");
-      var addedScriptSC = 'if (question == ' + userString + ') {answer = ' + editedAnswerCleared + '}';
+      var editedAnswerCleared = '\'' + editedAnswer + '\'';
+      var addedScriptSC = 'if (question == ' + userString + ') {answer = ' + editedAnswerCleared + ';}';
       localStorage.setItem('addedScriptSC', addedScriptSC);
       var debugSCTrigger = 'true';
       localStorage.setItem('debugSCTrigger', debugSCTrigger);
-      answer = 'SmartCode has been saved, cstr, answer';
+      answer = 'Alright, I understood what you taught me';
     }    
     //answer = "(" + userString + ", " + commandString + "), <br><br>" + windowOpenLinkCleared + ", <br><br>" + editedAnswerCleared
   }
@@ -2197,33 +2179,32 @@ function outputFormation(question) {
       window.open('mailto:' + emailAddress1);
     }, exceptionEmailInput);
   }
-  /*if (question.match('.*\\breminder for\\b.*')) {
-    var reminderRequestedText = prompt('\nType the text for the reminder');
-    var reminderRequestedTime = question.substring(12);
-    var exception = reminderRequestedTime * 60000;
-    answer = ' Your reminder has been set';
-    setTimeout(function () {
-      var msg1 = new SpeechSynthesisUtterance(reminderRequestedTime + 'minutes reminder');
-      window.speechSynthesis.speak(msg1);
-      alert('\nREMINDER : ' + reminderRequestedTime + ' minutes ago\n\n ' + reminderRequestedText);
-    }, exception);
-  }*/
-  eval("var rem" + reminderRequestedTime + " = localStorage.getItem('rem" + reminderRequestedTime + "');");
-  if (question == 'show rems') {
-    eval("var showRem = rem" + reminderRequestedTime + ";");
-    answer = showRem;
-  }
   if (question.match('.*\\bremind for\\b.*')) {
-   // var reminderRequestedText = prompt('\nType the text for the reminder');
-    var reminderRequestedTime = question.substring(11);
-    eval("var rem" + reminderRequestedTime + " = " + reminderRequestedTime + ";localStorage.setItem('rem" + reminderRequestedTime + "', rem" + reminderRequestedTime + ");");
-    var exception = reminderRequestedTime * 60000;
-    answer = ' Your reminder has been set';
-    setTimeout(function () {
-      var msg1 = new SpeechSynthesisUtterance(reminderRequestedTime + 'minutes reminder');
-      window.speechSynthesis.speak(msg1);
-      alert('\nREMINDER : ' + reminderRequestedTime + ' minutes ago\n\n ' + reminderRequestedText);
-    }, exception);
+    var reminderRequestedTime = question.replace(/\D/g, '');
+    var reminderRequestedText = question.substring(question.indexOf('to') + 3);
+    if (reminderRequestedText.match('.*\\bemail\\b.*')) {
+      eval("var rem" + reminderRequestedTime + " = " + reminderRequestedTime + ";");
+      eval("localStorage.setItem('rem" + reminderRequestedTime + "', rem" + reminderRequestedTime + ");");
+      var exception = reminderRequestedTime * 60000;
+      setTimeout(function () {
+        var msg1 = new SpeechSynthesisUtterance(reminderRequestedTime + 'minutes reminder');
+        window.speechSynthesis.speak(msg1);
+        alert('\nREMINDER : ' + reminderRequestedTime + ' minutes ago\n\n ' + reminderRequestedText);
+        window.open("mailto:")
+      }, exception);
+      answer = 'I will remind you in ' + reminderRequestedTime + ' minutes';
+    } else {
+      eval("var rem" + reminderRequestedTime + " = " + reminderRequestedTime + ";");
+      eval("localStorage.setItem('rem" + reminderRequestedTime + "', rem" + reminderRequestedTime + ");");
+      var exception = reminderRequestedTime * 60000;
+      answer = 'Your reminder has been set';
+      setTimeout(function () {
+        var msg1 = new SpeechSynthesisUtterance(reminderRequestedTime + 'minutes reminder');
+        window.speechSynthesis.speak(msg1);
+        alert('\nREMINDER : ' + reminderRequestedTime + ' minutes ago\n\n ' + reminderRequestedText);
+      }, exception);
+    }
+
   } 
   if (question.match('.*\\bi live in\\b.*')) {
     var userLocation = question.substring(10);
@@ -2242,6 +2223,7 @@ function outputFormation(question) {
           var weatherTempC = data['current_observation']['temp_c'];
           var receivedTemp = $('#temp').html(weatherTemp);
           localStorage.setItem('receivedTemp', receivedTemp);
+          localStorage.removeItem('receivedTemp');
           localStorage.setItem('weatherTempC', weatherTempC);
         });
         setTimeout(getWeather, 3000);
@@ -2250,7 +2232,9 @@ function outputFormation(question) {
       if (receivedTempValue.match(/[0-9]/g)) {
         var msg1 = new SpeechSynthesisUtterance('The temperature is ' + weatherTempC + " celsius");
         window.speechSynthesis.speak(msg1);
-        answer = "The temperature in " + userLocation + " is " + receivedTempValue;
+        localStorage.removeItem('receivedTemp');
+        receivedTempValue.innerHTML = '';
+        answer = "The temperature in " + userLocation + " is " + receivedTempValue;        
       }
       if (!receivedTempValue.match(/[0-9]/g)) {
         var msg2 = new SpeechSynthesisUtterance("Weather information is loading, ask me again in a moment.");
@@ -2334,24 +2318,10 @@ function outputFormation(question) {
         wants to define a word
       */
       localStorage.removeItem('notDictTrigger');
+      localStorage.removeItem('word');
+      localStorage.removeItem('askedWord');
     }
   }
-  /*
-    if (question.match('.*\\bdefine\\b.*')) {
-    var define = question.substring(8);
-    if (define != null) {
-      window.open('https://www.google.com/search?q=define%20' + define);
-      answer = 'The definition of the word you were looking for has been opened on a new window';
-    }
-  }
-  if (question.match('.*\\bsynonym\\b.*')) {
-    var synonym = question.substring(9);
-    if (synonym != null) {
-      window.open('https://www.google.com/search?q=synonym%20' + synonym);
-      answer = 'All of the synonyms of the word you were looking for have been opened on a new window';
-    }
-  }  
-  */
   return answer
 }
 

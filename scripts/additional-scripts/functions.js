@@ -1,6 +1,7 @@
 /* this is for emails *//////////////////////////////////////
 var Customprompt = document.getElementById('prompt1');
 var titleInput = document.getElementById('titleInput');
+/* general custom prompt function */
 function promptDisplay() {
     var msg1 = new SpeechSynthesisUtterance('Fill in the following inputs');
     window.speechSynthesis.speak(msg1);
@@ -13,6 +14,8 @@ function promptDisplay() {
     titleInput.style.visibility = 'visible';
     blur.style.visibility = 'visible';
 }
+
+/* 3 functions for emails */
 function submitEmailButton1() {
     btnPrompt.onclick = function () {
       var titleInputEmail = document.getElementById('titleInput').value;
@@ -49,6 +52,9 @@ function submitEmailButton3() {
       window.open('mailto:' + emailAddress3 + '?subject=' + titleInputEmail + '&body=' + promptMessageEmail);
     }
 }
+
+/* 3 functions for notes */
+
 function createNote1() {
     btnPrompt.onclick = function() {
       var changeTitle1 = titleInput.value;
@@ -96,6 +102,18 @@ function createNote3() {
     }
 }
 
+//debugger alert function
+
+function debuggerDisplay() {
+  debugAlert.style.visibility = "visible";
+  debuggerBtn.style.visibility = "visible";
+}
+function debuggerOnclick() {
+  debuggerBtn.onclick = function() {
+    debugAlert.style.visibility = "hidden";
+    debuggerBtn.style.visibility = "hidden";
+  }
+}
 
 /* removing the header *//////////////////////////////////////
 var header = document.getElementById('allHeader');
@@ -128,7 +146,7 @@ input.onclick = function() {
   if the user clicks on the first 0-80 seconds then input will be empty
   else if user clicks it after that nothing will happen by default
   */
-  if ((nowTime - onLoadTime) < 80) {
+  if ((nowTime - onLoadTime) < 40) {
     input.value = '';
   }
 }
